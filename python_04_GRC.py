@@ -3,7 +3,7 @@ var2 = int(input("Ingresa el segundo número entero: "))
 suma = var1+var2
 resta = var2 - var1
 multiplicacion = var1 * var2
-division_entera = var2 // var2
+division_entera = var2 // var1
 resto_division = var2%var1
 
 print(f""" 
