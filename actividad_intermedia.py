@@ -39,8 +39,6 @@ def mostrar_curso(lst: list):
             for i in curso:
                 print(f" {i}: {curso[i]}")
 
-
-
 def modificar_curso(lst:list):
 
     print("\nEstos son los cursos disponibles...\n")
@@ -66,7 +64,6 @@ def modificar_curso(lst:list):
         ¡Cambio Exitoso!
         Estado del curso:  {modificado['estado']}
         """)
-
 
 
 
