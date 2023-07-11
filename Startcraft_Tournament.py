@@ -29,12 +29,13 @@ class Match:
         else:
             self.winner = self.player2
 
-        # Update player stats
         self.winner.match_counter += 1
-        self.winner.point_counter += 3
+        self.winner.point_counter += 3          # 3 points for winning match
+
+        # Select winner and loser
         loser = self.player1 if self.winner == self.player2 else self.player2
         loser.match_counter += 1
-        loser.point_counter += 1
+        loser.point_counter += 1                # 1 point for loss match
         loser.status = "Inactive"
 
 
@@ -64,6 +65,9 @@ class Tournament:
         active_players = self.get_active_players()
         random.shuffle(active_players)
         num_players = len(active_players)
+        print("\n TOURNAMENT BEGINS ")
+        print("*" * 40)
+
         for i in range(0, num_players, 2):
             player1 = active_players[i]
             player2 = active_players[i + 1]
@@ -94,8 +98,8 @@ class Tournament:
         elif export_decision == "2":
             pass
 
+# CREATE TEXT FILE
     def export_results(self):
-        # Export tournament results to a text file
         with open("tournament_results.txt", "w") as file:
             file.write("- TOURNAMENT RESULTS:")
             for i, player in enumerate(self.players):
